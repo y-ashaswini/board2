@@ -36,9 +36,17 @@ export default function LineChart({ data1, data2 }) {
   });
   const options = {
     label: "One Morning in the Summer Month of June",
-    legend: {
-      display: true,
+    plugins: {
+      legend: {
+        display: true,
+        labels: {
+          usePointStyle: true,
+
+          padding: 10,
+        },
+      },
     },
+
     elements: {
       pointRadius: 0,
     },

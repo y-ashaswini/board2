@@ -121,7 +121,7 @@ export default function Home() {
       <div className="flex flex-col sm:col-start-3 sm:col-span-3 lg:col-start-2 lg:col-span-4 overflow-y-scroll scrollbar-thumb-zinc-300 sm:pr-4 scrollbar-thumb-rounded-2xl scrollbar-track-latte scrollbar-thin">
         <div className="flex items-center flex-wrap justify-between">
           <span className="font-bold sm:text-2xl">Dashboard</span>
-          <span className="flex gap-2 flex-1 items-center">
+          <span className="flex gap-2 flex-1 md:flex-none items-center">
             <form className="bg-white sm:px-4 p-1 flex-1 sm:text-base text-xs text-zinc-600 sm:rounded-lg rounded-md flex gap-2 items-center">
               <input
                 type="text"
@@ -216,15 +216,29 @@ export default function Home() {
         </div>
 
         <LineChart data1={fetchdata1?.data} data2={fetchdata2?.data} />
-        <div className="flex lg:flex-row flex-col justify-center gap-4 my-4">
+        <div className="flex md:grid lg:grid-cols-3 flex-col justify-center gap-4 my-4">
           <PieChart data={fetchdata3?.data} />
-          <div className="bg-white sm:p-8 p-4 rounded-3xl h-fit flex-1">
+          <div className="bg-white col-span-2 sm:p-8 p-4 rounded-3xl h-fit flex-1">
             <span className="flex justify-between items-center">
               <span className="font-bold sm:text-xl text-left">
                 Today's Schedule
               </span>
-              <span className="text-zinc-400 text-sm cursor-pointer hover:underline underline-zinc-400 underline-offset-4">
-                See All {">"}
+              <span className="text-zinc-400 text-sm cursor-pointer hover:underline underline-zinc-400 underline-offset-4 flex gap-1 items-center">
+                See All
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-4 h-4"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
               </span>
             </span>
 
