@@ -55,8 +55,8 @@ export default function PieChart({ data }) {
     ],
   };
   return (
-    <div className="bg-white p-8 w-it pt-16 rounded-3xl relative">
-      <span className="text-xl absolute left-8 top-4 font-bold">
+    <div className="bg-white sm:p-8 pt-16 p-2 sm:rounded-3xl rounded-md w-full items-center flex flex-col flex-1 relative ">
+      <span className="sm:text-xl absolute left-8 top-4 font-bold">
         Top Products
       </span>
       <Pie options={options} data={datapoints} />

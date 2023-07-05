@@ -69,8 +69,8 @@ export default function LineChart({ data1, data2 }) {
     ],
   };
   return (
-    <div className="bg-white p-8 pt-16 rounded-3xl relative">
-      <span className="text-xl absolute left-8 top-4 font-bold">
+    <div className="bg-white sm:p-8 pt-16 p-2 sm:rounded-3xl rounded-md flex-1 relative ">
+      <span className="sm:text-xl absolute sm:left-8 left-4 top-4 font-bold">
         Activities
       </span>
       <Line options={options} data={datapoints} />

@@ -48,11 +48,11 @@ export default function Home() {
   // name
   // image
   return session ? (
-    <div className="w-[100vw] h-[100vh] grid grid-cols-5 gap-8 p-8">
-      <div className="flex flex-col justify-between bg-black col-span-1 rounded-3xl p-8 text-lightone">
-        <div className="flex flex-col gap-8 text-sm">
-          <span className="text-3xl font-bold">Board.</span>
-          <span className="flex items-center font-bold gap-4">
+    <div className="w-[100vw] h-[100vh] sm:grid sm:grid-cols-5 gap-8 sm:p-8 p-4">
+      <div className="flex flex-col justify-between bg-black lg:col-span-1 sm:col-span-2 rounded-3xl sm:p-8 p-4 text-lightone sm:mb-0 mb-8">
+        <div className="flex sm:flex-col flex-wrap sm:gap-8 gap-2 text-sm">
+          <span className="text-3xl font-bold mr-4">Board.</span>
+          <span className="flex items-center font-bold gap-4 cursor-pointer">
             <Image
               height={15}
               width={15}
@@ -103,26 +103,30 @@ export default function Home() {
             Settings
           </span>
         </div>
-        <div className="flex flex-col gap-4 text-sm font-light">
-          <span>Help</span>
-          <span>Contact Us</span>
+        <div className="flex sm:flex-col flex-wrap items-center sm:items-start self-end sm:self-start gap-2 mt-2 sm:text-sm text-xs font-light">
+          <span className="hover:underline underline-offset-4 cursor-pointer sm:border-0 border-[1px] px-2 py-1 rounded-md">
+            Help
+          </span>
+          <span className="hover:underline underline-offset-4 cursor-pointer sm:border-0 border-[1px] px-2 py-1 rounded-md">
+            Contact Us
+          </span>
           <span
-            className="bg-lightone text-black px-2 py-1 rounded-md font-extrabold w-fit cursor-pointer"
+            className="sm:bg-lightone sm:text-black text-white px-2 py-1 rounded-md font-extrabold w-fit cursor-pointer sm:border-0 border-[1px]"
             onClick={() => signOut()}
           >
             Sign Out
           </span>
         </div>
       </div>
-      <div className="flex flex-col col-start-2 col-span-4 overflow-y-scroll scrollbar-thumb-zinc-300 pr-4 scrollbar-thumb-rounded-2xl scrollbar-track-latte scrollbar-thin">
-        <div className="flex items-center justify-between">
-          <span className="font-bold text-2xl">Dashboard</span>
-          <span className="flex gap-2 items-center">
-            <form className="bg-white px-4 py-1 text-zinc-600 rounded-lg flex gap-2 items-center">
+      <div className="flex flex-col sm:col-start-3 sm:col-span-3 lg:col-start-2 lg:col-span-4 overflow-y-scroll scrollbar-thumb-zinc-300 sm:pr-4 scrollbar-thumb-rounded-2xl scrollbar-track-latte scrollbar-thin">
+        <div className="flex items-center flex-wrap justify-between">
+          <span className="font-bold sm:text-2xl">Dashboard</span>
+          <span className="flex gap-2 flex-1 items-center">
+            <form className="bg-white sm:px-4 p-1 flex-1 sm:text-base text-xs text-zinc-600 sm:rounded-lg rounded-md flex gap-2 items-center">
               <input
                 type="text"
                 placeholder="Search..."
-                className="text-light outline-none bg-transparent"
+                className="text-light flex-1 outline-none bg-transparent"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -164,8 +168,8 @@ export default function Home() {
             />
           </span>
         </div>
-        <div className="grid grid-cols-4 gap-8 my-4">
-          <span className="p-4 bg-[#DDEFE0] rounded-lg flex justify-center flex-col">
+        <div className="grid lg:grid-cols-4 grid-cols-2 sm:gap-8 gap-2 my-4">
+          <span className="sm:p-4 p-2 bg-[#DDEFE0] rounded-lg flex justify-center flex-col">
             <Image
               height={25}
               width={25}
@@ -174,9 +178,9 @@ export default function Home() {
               className="self-end"
             />
             <span className="text-xs">Total Revenues</span>
-            <span className="text-xl font-bold">$2,129,430</span>
+            <span className="sm:text-xl font-bold">$2,129,430</span>
           </span>
-          <span className="p-4 bg-[#F4ECDD] flex flex-col justify-center rounded-lg">
+          <span className="sm:p-4 p-2 bg-[#F4ECDD] flex flex-col justify-center rounded-lg">
             <Image
               height={25}
               width={25}
@@ -185,7 +189,7 @@ export default function Home() {
               className="self-end"
             />
             <span className="text-xs">Total Transactions</span>
-            <span className="text-xl font-bold">1,520</span>
+            <span className="sm:text-xl font-bold">1,520</span>
           </span>
           <span className="p-4 bg-[#EFDADA] flex flex-col justify-center rounded-lg">
             <Image
@@ -196,9 +200,9 @@ export default function Home() {
               className="self-end"
             />
             <span className="text-xs">Total Likes</span>
-            <span className="text-xl font-bold">9,721</span>
+            <span className="sm:text-xl font-bold">9,721</span>
           </span>
-          <span className="p-4 bg-[#DEE0EF] flex flex-col justify-center rounded-lg">
+          <span className="sm:p-4 p-2 bg-[#DEE0EF] flex flex-col justify-center rounded-lg">
             <Image
               height={25}
               width={25}
@@ -207,16 +211,16 @@ export default function Home() {
               className="self-end"
             />
             <span className="text-xs">Total Users</span>
-            <span className="text-xl font-bold">892</span>
+            <span className="sm:text-xl font-bold">892</span>
           </span>
         </div>
 
         <LineChart data1={fetchdata1?.data} data2={fetchdata2?.data} />
-        <div className="flex gap-4 my-4">
+        <div className="flex lg:flex-row flex-col justify-center gap-4 my-4">
           <PieChart data={fetchdata3?.data} />
-          <div className="bg-white p-8 rounded-3xl h-fit flex-1">
+          <div className="bg-white sm:p-8 p-4 rounded-3xl h-fit flex-1">
             <span className="flex justify-between items-center">
-              <span className="font-bold text-xl text-left">
+              <span className="font-bold sm:text-xl text-left">
                 Today's Schedule
               </span>
               <span className="text-zinc-400 text-sm cursor-pointer hover:underline underline-zinc-400 underline-offset-4">
@@ -224,7 +228,7 @@ export default function Home() {
               </span>
             </span>
 
-            <span className="border-l-4 border-[#9BDD7C] flex flex-col p-4 text-sm text-zinc-500 mt-4">
+            <span className="border-l-4 border-[#9BDD7C] flex flex-col p-4 sm:text-sm text-xs text-zinc-500 mt-4">
               <span className="font-bold">
                 Meeting with Suppliers from Kuta Bali
               </span>
@@ -243,15 +247,15 @@ export default function Home() {
       </div>
     </div>
   ) : (
-    <div className="w-[100vw] h-[100vh] grid grid-cols-5">
-      <div className="col-span-2 bg-black text-white flex flex-col justify-center items-center text-6xl font-bold">
+    <div className="w-[100vw] h-[100vh] md:grid md:grid-cols-5">
+      <div className="md:col-span-2 bg-black text-white py-2 mb-8 md:m-0 md:p-0 flex flex-col justify-center items-center md:text-6xl text-3xl font-bold">
         Board.
       </div>
-      <div className="col-start-3 col-span-3 bg-lightone flex flex-col justify-center items-center">
-        <span className="flex flex-col">
+      <div className="md:col-start-3 md:col-span-3 bg-lightone flex flex-col justify-center items-center">
+        <span className="flex flex-col p-4">
           <span className="text-3xl font-bold">Sign In</span>
           <span className="font-semibold text-sm">Sign in to your account</span>
-          <span className="flex items-center gap-4 my-8 text-sm">
+          <span className="flex items-center flex-wrap gap-4 my-8 text-sm">
             <button
               onClick={() => signIn()}
               className="bg-white flex gap-2 items-center px-4 py-1 rounded-lg text-zinc-500"
@@ -267,7 +271,7 @@ export default function Home() {
               Sign in with Apple
             </button>
           </span>
-          <form className="bg-white rounded-lg p-8 flex flex-col gap-4 text-sm font-semibold">
+          <form className="bg-white rounded-lg sm:p-8 p-4 flex flex-col gap-4 md:text-sm text-xs font-semibold">
             <span>Email address</span>
             <input
               className="outline-none px-4 py-2 bg-zinc-200 rounded-lg"
